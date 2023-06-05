@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0" xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="TaskPaneApp">
-  <Id>e91c1112-421d-4a03-978b-72842538eeee</Id>
+  <Id>e91c1112-421d-4a03-978b-72842538db90</Id>
   <Version>1.0.0.0</Version>
   <ProviderName>fj</ProviderName>
   <DefaultLocale>en-US</DefaultLocale>
-  <DisplayName DefaultValue="X Utilities (dev)"/>
+  <DisplayName DefaultValue="X Utilities"/>
   <Description DefaultValue="Test add-in for Excel"/>
   <IconUrl DefaultValue="https://localhost:3000/assets/icon-32.png"/>
   <HighResolutionIconUrl DefaultValue="https://localhost:3000/assets/icon-64.png"/>
@@ -53,6 +53,32 @@
                 </Control>
               </Group>
             </OfficeTab>
+            <CustomTab id="AwesomeTab">
+              <Group id="defaultGroup">
+                <Label resid="Tab.Button1.Title"/>
+                <Icon>
+                  <bt:Image size="16" resid="Icon.16x16"/>
+                  <bt:Image size="32" resid="Icon.32x32"/>
+                  <bt:Image size="80" resid="Icon.80x80"/>
+                </Icon>
+                <Control xsi:type="Button" id="defaultButton">
+                  <Label resid="Tab.Button1.Title"/>
+                  <Supertip>
+                    <Title resid="Tab.Button1.Title"/>
+                    <Description resid="Tab.Button1.Tooltip"/>
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="Icon.16x16"/>
+                    <bt:Image size="32" resid="Icon.32x32"/>
+                    <bt:Image size="80" resid="Icon.80x80"/>
+                  </Icon>
+                  <Action xsi:type="ExecuteFunction">
+                    <FunctionName>tabButtonClicked</FunctionName>
+                  </Action>
+                </Control>
+              </Group>
+              <Label resid="Tab.Button1.Title"/>
+            </CustomTab>
           </ExtensionPoint>
         </DesktopFormFactor>
       </Host>
@@ -71,11 +97,14 @@
       <bt:ShortStrings>
         <bt:String id="GetStarted.Title" DefaultValue="X Utilities!"/>
         <bt:String id="CommandsGroup.Label" DefaultValue="X Commands"/>
-        <bt:String id="TaskpaneButton.Label" DefaultValue="Open X"/>
+        <bt:String id="TaskpaneButton.Label" DefaultValue="Open X (dev)"/>
+        <bt:String id="Tab.Title" DefaultValue="Awesome Tab"/>
+        <bt:String id="Tab.Button1.Title" DefaultValue="Awesome!"/>
       </bt:ShortStrings>
       <bt:LongStrings>
         <bt:String id="GetStarted.Description" DefaultValue="Open X to see features"/>
         <bt:String id="TaskpaneButton.Tooltip" DefaultValue="Click to find out..."/>
+        <bt:String id="Tab.Button1.Tooltip" DefaultValue="Try to see what awesome results come!"/>
       </bt:LongStrings>
     </Resources>
   </VersionOverrides>

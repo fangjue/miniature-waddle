@@ -42,3 +42,9 @@ const g = getGlobal();
 
 // The add-in command functions need to be available in global scope
 g.action = action;
+
+async function tabButtonClicked(event) {
+  event.completed();
+}
+
+Office.actions.associate("tabButtonClicked", tabButtonClicked);
